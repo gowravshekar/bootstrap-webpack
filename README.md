@@ -15,7 +15,8 @@ module.exports = {
     loaders: [
       // the url-loader uses DataUrls.
       // the file-loader emits files.
-      { test: /\.woff$/,   loader: "url-loader?limit=10000&minetype=application/font-woff" },
+      { test: /\.woff$/,   loader: "url-loader?limit=10000&mimetype=application/font-woff" },
+      { test: /\.woff2$/,   loader: "url-loader?limit=10000&mimetype=application/font-woff" },
       { test: /\.ttf$/,    loader: "file-loader" },
       { test: /\.eot$/,    loader: "file-loader" },
       { test: /\.svg$/,    loader: "file-loader" }
@@ -23,6 +24,8 @@ module.exports = {
   }
 };
 ```
+Make sure to install `url-loader` and `file-loader` modules before using this configuration.
+
 
 ### Complete Bootstrap
 
