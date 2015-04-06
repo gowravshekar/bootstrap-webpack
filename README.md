@@ -24,6 +24,8 @@ module.exports = {
   }
 };
 ```
+Make sure to install `url-loader` and `file-loader` modules before using this configuration.
+
 
 ### Complete Bootstrap
 
