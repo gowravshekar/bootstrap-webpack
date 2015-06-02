@@ -115,3 +115,35 @@ module.exports = {
 ```
 
 Install `extract-text-webpack-plugin` before using this configuration.
+
+### Extracting bootstrap and your css together
+If you would like bootstrap and your own styles in a single extracted css file, the above will not work. Instead use:
+
+```
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var webpack = require('webpack');
+
+module.exports = {
+  entry: [
+    ExtractTextPlugin.extract('style', 'css!less!bootstrap-webpack/bootstrap-styles!./bootstrap.config.js'),
+    'bootstrap-webpack/bootstrap-scripts!./bootstrap.config.js',
+    <your app entry point>
+  ],
+  loader: [
+    {
+      test: /\.(css|less)$/,
+      loader: ExtractTextPlugin.extract('style', 'css!less')
+    }
+  ],
+  output: {
+    <your output configuration>
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+        jQuery: 'jquery'
+    }),
+    new ExtractTextPlugin('styles.css')
+  ]
+```
+
+You need to use the provide plugin to make sure jquery is available for bootstrap scripts
