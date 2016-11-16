@@ -26,13 +26,7 @@ module.exports = {
 };
 ```
 
-Bootstrap javascript components depends on jQuery. The simplest way of adding jQuery to your webpack app is by exposing `$` and `jQuery` to global namespace.
-
-``` javascript
-require('expose?$!expose?jQuery!jquery');
-```
-
-Add it before requiring `bootstrap-webpack`. This uses `expose-loader` of webpack. Install [expose-loader](https://github.com/webpack/expose-loader) by `npm install expose-loader --save-dev`.
+Bootstrap javascript components depends on jQuery. This uses `imports-loader` of webpack. Install [imports-loader](https://github.com/webpack/imports-loader) by `npm install imports-loader --save-dev`.
 
 ### Complete Bootstrap
 
