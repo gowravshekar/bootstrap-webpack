@@ -3,7 +3,7 @@ bootstrap-webpack
 
 bootstrap package for webpack.
 
-This is the `less` version. If you are looking for the `sass` version, refer to [bootstrap-sass-loader](https://github.com/justin808/bootstrap-sass-loader).
+This is the `less` version. If you are looking for the `sass` version supporting both v3 and v4 of bootstrap, refer to [bootstrap-loader](https://github.com/justin808/bootstrap-loader).
 
 
 Usage
